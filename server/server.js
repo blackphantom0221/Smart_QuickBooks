@@ -9,11 +9,35 @@ const port = process.env.HTTP_PORT;
 app.use(cors());
 app.use(express.json());
 
+//Setup these environment variables!
 const db = mysql.createConnection({
     host: process.env.HOST,
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
+});
+
+app.post("/input", (req, res) => {
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const phoneNumber = req.body.phoneNumber;
+  const emailAddress = req.body.emailAddress;
+
+  db.query(
+      "INSERT INTO phonebook (firstName, lastName, phoneNumber , emailAddress) VALUES (?,?,?,?)",
+      [firstName, lastName, phoneNumber, emailAddress],
+      (err, result) => {
+          if (err) console.log(err);
+          else res.send("Values Inserted");
+      }
+  );
+});
+
+app.get("/view", (req, res) => {
+  db.query("SELECT * FROM phonebook", (err, result) => {
+      if (err) console.log(err);
+      else res.send(result);
+  });
 });
 
 app.listen(process.env.PORT || port, () => {

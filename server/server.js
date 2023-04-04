@@ -40,6 +40,22 @@ app.get("/view", (req, res) => {
   });
 });
 
+app.put("/update", (req, res) => {
+  const id = req.body.id;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const phoneNumber = req.body.phoneNumber;
+  const emailAddress = req.body.emailAddress;
+  db.query(
+      "UPDATE phonebook SET firstName = ? , lastName = ? , phoneNumber = ? , emailAddress = ? where id = ?",
+      [firstName, lastName, phoneNumber, emailAddress, id],
+      (err, result) => {
+          if (err) console.log(err);
+          else res.send(result);
+      }
+  );
+});
+
 app.listen(process.env.PORT || port, () => {
   console.log(`Server is running on port ${port || process.env.PORT}`);
 });

@@ -1,0 +1,13 @@
+#submit-nav-button {
+    color: #FFE6C7 !important;
+    font-weight: 700;
+    border-radius: 4px;
+    background-color: #FF6000;
+    padding: 0.4em 0.8em;
+    margin: auto;
+}
+
+#submit-nav-button:hover {
+    color: #454545 !important;
+    background-color: #FFE6C7;
+}

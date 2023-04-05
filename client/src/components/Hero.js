@@ -14,7 +14,7 @@ const Hero = () => {
                 Manage Contacts in a{" "}
                 <span style={{ color: "#FF6000" }}>Quick Book!</span>
               </h1>
-              <p className="tagline">Instantly export your contacts as a <strong>CSV</strong> file.</p>
+              <p className="tagline">Instantly export your contacts as a <strong>CSV</strong> file and <strong>Sync</strong> across all your devices.</p>
               <Link to="/input">
                 <Button id="hero-btn" variant="outline-primary" size="lg">
                   Get Started

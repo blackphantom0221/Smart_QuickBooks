@@ -10,24 +10,24 @@ const View = () => {
 
   useEffect(() => {
     //Update URL according to deployment.
-    Axios.get("http://localhost:8000/view").then((response) => {
-      setContactList(response.data);
-    }).catch((err) => {
-      console.log("Request failed:", err);
-    });
+    Axios.get("http://localhost:8000/view")
+      .then((response) => {
+        setContactList(response.data);
+      })
+      .catch((err) => {
+        console.log("Request failed:", err);
+      });
   }, []);
 
   const deleteContact = (id) => {
     //Update URL according to deployment.
-    Axios.delete(`http://localhost:8000/delete/${id}`).then(
-      () => {
-        setContactList(
-          contactList.filter((val) => {
-            return val.id !== id;
-          })
-        );
-      }
-    );
+    Axios.delete(`http://localhost:8000/delete/${id}`).then(() => {
+      setContactList(
+        contactList.filter((val) => {
+          return val.id !== id;
+        })
+      );
+    });
   };
 
   const clearAll = () => {
@@ -76,20 +76,32 @@ const View = () => {
         </tbody>
       </Table>
 
-      <Row>
-        <Col>
+      <div className="">
+        <Row>
+          <Col>
+            <Button variant="outline-primary" size="lg" id="export-csv-btn">
+              <CSVLink {...csvReport} className="export-text">
+                Export CSV
+              </CSVLink>
+            </Button>
+          </Col>
           <Button variant="outline-primary" size="lg" id="export-csv-btn">
             <CSVLink {...csvReport} className="export-text">
-              Export CSV
+              Sync with Phone
             </CSVLink>
           </Button>
-        </Col>
-        <Col className="d-flex justify-content-end">
-          <Button variant="outline-danger" id="clear-btn" size="lg" onClick={clearAll}>
-            Clear All
-          </Button>
-        </Col>
-      </Row>
+          <Col className="d-flex justify-content-end">
+            <Button
+              variant="outline-danger"
+              id="clear-btn"
+              size="lg"
+              onClick={clearAll}
+            >
+              Clear All
+            </Button>
+          </Col>
+        </Row>
+      </div>
     </Container>
   );
 };

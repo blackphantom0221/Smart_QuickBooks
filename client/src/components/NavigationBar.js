@@ -1,6 +1,8 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import "../styles/nav.css";
+
 const NavigationBar = () => {
   return (
     <div>
@@ -17,6 +19,14 @@ const NavigationBar = () => {
               </Nav.Link>
               <Nav.Link as={Link} to="/view" style={{ color: "#FFA559" }}>
                 View
+              </Nav.Link>
+              <Nav.Link as={Link} to="/login" style={{ color: "#FFA559" }}>
+                Login
+              </Nav.Link>
+            </Nav>
+            <Nav className="ml-auto">
+              <Nav.Link as={Link} to="/signup" id="submit-nav-button" style={{ color: "#FFA559" }}>
+                Signup
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

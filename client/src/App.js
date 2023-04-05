@@ -5,6 +5,8 @@ import NavigationBar from "./components/NavigationBar";
 import Input from "./components/Input";
 import Hero from "./components/Hero";
 import View from "./components/View";
+import LoginPage from "./components/Login";
+import SignupPage from "./components/Signup";
 
 //Import styles
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -22,6 +24,8 @@ function App() {
               {" "}
             </Route>
             <Route path="/view" element={<View />}></Route>
+            <Route path="/login" element={<LoginPage />}></Route>
+            <Route path="/signup" element={<SignupPage />}></Route>
           </Routes>
         </div>
       </div>

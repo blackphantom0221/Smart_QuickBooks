@@ -48,7 +48,7 @@ const Input = () => {
     <Container>
       <Form onSubmit={addContact}>
         <Row className="mb-3 mt-3">
-          <Form.Group as={Col} className="mb-3" controlId="formBasicEmail">
+          <Form.Group as={Col} className="mb-3">
             <Form.Label>First Name</Form.Label>
             <Form.Control
               type="text"
@@ -60,7 +60,7 @@ const Input = () => {
             />
           </Form.Group>
 
-          <Form.Group as={Col} className="mb-3" controlId="formBasicEmail">
+          <Form.Group as={Col} className="mb-3">
             <Form.Label>Last Name</Form.Label>
             <Form.Control
               type="text"
@@ -72,7 +72,7 @@ const Input = () => {
           </Form.Group>
         </Row>
         <Row>
-          <Form.Group as={Col} className="mb-3" controlId="formBasicPassword">
+          <Form.Group as={Col} className="mb-3">
             <Form.Label>Phone Number</Form.Label>
             <Form.Control
               type="number"
@@ -83,7 +83,7 @@ const Input = () => {
             />
           </Form.Group>
 
-          <Form.Group as={Col} className="mb-3" controlId="formBasicEmail">
+          <Form.Group as={Col} className="mb-3">
             <Form.Label>Email Address</Form.Label>
             <Form.Control
               type="email"

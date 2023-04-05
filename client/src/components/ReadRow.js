@@ -25,7 +25,7 @@ const ReadRow = ({
             onClick={() => {
               setEditView(true);
             }}
-            style={{ cursor: "pointer", fill: "yellow" }}
+            style={{ cursor: "pointer" }}
           />
         </td>
         <td className="text-center">

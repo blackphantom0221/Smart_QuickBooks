@@ -50,3 +50,9 @@
     background-color: #ff5959;
     color: #FFE6C7;
 }
+
+@media screen and (max-width: 768px) {
+    * {
+        font-size: 0.9rem !important;
+    }
+}

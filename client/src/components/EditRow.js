@@ -11,7 +11,7 @@ const EditRow = ({ val, setEditView, setContactList, contactList }) => {
 	const [newEmailAddress, setNewEmailAddress] = useState(val.emailAddress);
 
 	const updateContact = (id) => {
-		Axios.put("https://smart-phonebook.herokuapp.com/update", {
+		Axios.put("http://localhost:8000/update", {
 			id: id,
 			firstName: newFirstName,
 			lastName: newLastName,

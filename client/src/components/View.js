@@ -10,7 +10,7 @@ const View = () => {
 
   useEffect(() => {
     //Update URL according to deployment.
-    Axios.get("https://smart-phonebook.herokuapp.com/view").then((response) => {
+    Axios.get("http://localhost:8000/view").then((response) => {
       setContactList(response.data);
     }).catch((err) => {
       console.log("Request failed:", err);
@@ -19,7 +19,7 @@ const View = () => {
 
   const deleteContact = (id) => {
     //Update URL according to deployment.
-    Axios.delete(`https://smart-phonebook.herokuapp.com/delete/${id}`).then(
+    Axios.delete(`http://localhost:8000/delete/${id}`).then(
       () => {
         setContactList(
           contactList.filter((val) => {
@@ -31,7 +31,7 @@ const View = () => {
   };
 
   const clearAll = () => {
-    Axios.delete("https://smart-phonebook.herokuapp.com/deleteAll").then(() => {
+    Axios.delete("http://localhost:8000/deleteAll").then(() => {
       setContactList([]);
     });
   };

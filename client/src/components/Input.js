@@ -6,7 +6,7 @@ import Axios from "axios";
 import "../styles/input.css";
 
 const Input = () => {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -27,14 +27,14 @@ const Input = () => {
 
     if (isValid === true) {
       // Update URL according to deployment.
-      Axios.post("https://smart-phonebook.herokuapp.com/input", {
+      Axios.post("http://localhost:8000/input", {
         firstName: firstName,
         lastName: lastName,
         phoneNumber: phoneNumber,
         emailAddress: emailAddress,
       })
         .then(() => {
-          history.push("/view");
+          navigate("/view");
         })
         .catch((err) => {
           console.log("Request failed:", err);

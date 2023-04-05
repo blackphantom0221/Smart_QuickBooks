@@ -6,16 +6,16 @@ const NavigationBar = () => {
     <div>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand as={Link} to="/" style={{ color: "#ccc3f8" }}>
-            Smart Phonebook
+          <Navbar.Brand as={Link} to="/" style={{ color: "#FF6000" }}>
+            <strong>Quick</strong>books
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/input">
+              <Nav.Link as={Link} to="/input" style={{ color: "#FFA559" }}>
                 Input
               </Nav.Link>
-              <Nav.Link as={Link} to="/view">
+              <Nav.Link as={Link} to="/view" style={{ color: "#FFA559" }}>
                 View
               </Nav.Link>
             </Nav>

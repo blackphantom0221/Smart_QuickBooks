@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NavigationBar = () => {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar id="navbar" expand="lg" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/" style={{ color: "#FF6000" }}>
             <strong>Quick</strong>books

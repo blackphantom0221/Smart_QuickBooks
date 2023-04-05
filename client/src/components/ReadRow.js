@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
-import { GrUpdate } from "react-icons/gr";
+import { IoReloadSharp } from "react-icons/io5";
 import EditRow from "./EditRow";
 
 const ReadRow = ({
@@ -14,18 +14,18 @@ const ReadRow = ({
 
   const ReadOnlyRow = () => {
     return (
-      <tr>
-        <td>{val.id}</td>
-        <td>{val.firstName}</td>
-        <td>{val.lastName}</td>
-        <td>{val.phoneNumber}</td>
-        <td>{val.emailAddress}</td>
-        <td className="text-center">
-          <GrUpdate
+      <tr className="table-body">
+        <td id="table-item">{val.id}</td>
+        <td id="table-item">{val.firstName}</td>
+        <td id="table-item">{val.lastName}</td>
+        <td id="table-item">{val.phoneNumber}</td>
+        <td id="table-item">{val.emailAddress}</td>
+        <td id="table-item text-center">
+          <IoReloadSharp
             onClick={() => {
               setEditView(true);
             }}
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", fill: "yellow" }}
           />
         </td>
         <td className="text-center">

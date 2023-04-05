@@ -1,19 +1,52 @@
-.export-csv-btn {
-    color: black;
-    border-color: black;
+#export-csv-btn {
+    color: #454545;
+    font-weight: 700;
+    border: none;
+    border-color: #FFE6C7;
+    background-color: #FFE6C7;
+    width: 10em;
+    margin: auto;
 }
 
-.export-csv-btn:hover {
-    background-color: #ccc3f8;
-    border-color: #ccc3f8;
-    color: black;
+#export-csv-btn:hover {
+    background-color: #FFA559;
+    color: #454545;
 }
 
 .export-text {
-    color: black;
+    color: #454545;
+    background: none;
     text-decoration: none;
 }
 
 .export-text:hover {
-    color: black;
+    background-color: #FFA559;
+    color: #454545;
+}
+
+.table-header {
+    background-color: #454545;
+}
+
+#table-item {
+    background-color: #454545;
+    color: #FFE6C7;
+}
+
+#table-item svg {
+    color: #FFE6C7;
+}
+
+#clear-btn {
+    color: #454545;
+    font-weight: 700;
+    border: none;
+    border-color: #FFE6C7;
+    background-color: #FFE6C7;
+    width: 10em;
+}
+
+#clear-btn:hover {
+    background-color: #ff5959;
+    color: #FFE6C7;
 }

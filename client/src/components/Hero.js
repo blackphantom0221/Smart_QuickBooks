@@ -12,11 +12,11 @@ const Hero = () => {
             <div>
               <h1>
                 Manage Contacts in a{" "}
-                <span style={{ color: "#CCC3F8" }}>Quick Book!</span>
+                <span style={{ color: "#FF6000" }}>Quick Book!</span>
               </h1>
-              <p>Instantly export your contacts as a CSV file.</p>
+              <p className="tagline">Instantly export your contacts as a <strong>CSV</strong> file.</p>
               <Link to="/input">
-                <Button className="hero-btn" variant="outline-primary" size="lg">
+                <Button id="hero-btn" variant="outline-primary" size="lg">
                   Get Started
                 </Button>
               </Link>

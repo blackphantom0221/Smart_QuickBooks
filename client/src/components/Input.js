@@ -52,6 +52,7 @@ const Input = () => {
             <Form.Label>First Name</Form.Label>
             <Form.Control
               type="text"
+              id="input"
               placeholder="Enter First Name"
               required
               value={firstName}
@@ -63,6 +64,7 @@ const Input = () => {
             <Form.Label>Last Name</Form.Label>
             <Form.Control
               type="text"
+              id="input"
               placeholder="Enter Last Name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
@@ -74,6 +76,7 @@ const Input = () => {
             <Form.Label>Phone Number</Form.Label>
             <Form.Control
               type="number"
+              id="input"
               placeholder="Enter Phone Number"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
@@ -84,6 +87,7 @@ const Input = () => {
             <Form.Label>Email Address</Form.Label>
             <Form.Control
               type="email"
+              id="input"
               placeholder="Enter Email Address"
               value={emailAddress}
               onChange={(e) => setEmailAddress(e.target.value)}
@@ -92,7 +96,7 @@ const Input = () => {
         </Row>
 
         <div className="d-grid gap-2 mt-3 input-btn">
-          <Button variant="" className="input-btn" size="lg" type="submit">
+          <Button variant="" id="input-btn" size="lg" type="submit">
             Add Contact
           </Button>
         </div>

@@ -53,7 +53,7 @@ const View = () => {
     <Container>
       <Table striped bordered hover className="mt-3">
         <thead>
-          <tr>
+          <tr className="table-header">
             <th>#</th>
             <th>First Name</th>
             <th>Last Name</th>
@@ -78,14 +78,14 @@ const View = () => {
 
       <Row>
         <Col>
-          <Button variant="outline-primary" size="lg" className="export-csv-btn">
+          <Button variant="outline-primary" size="lg" id="export-csv-btn">
             <CSVLink {...csvReport} className="export-text">
               Export CSV
             </CSVLink>
           </Button>
         </Col>
         <Col className="d-flex justify-content-end">
-          <Button variant="outline-danger" size="lg" onClick={clearAll}>
+          <Button variant="outline-danger" id="clear-btn" size="lg" onClick={clearAll}>
             Clear All
           </Button>
         </Col>

@@ -8,13 +8,22 @@ p {
     font-weight: 400;
 }
 
-.hero-btn {
-    color: black;
-    border-color: black;
+#hero-btn {
+    color: #FFE6C7;
+    border-color: #FFE6C7;
 }
 
-.hero-btn:hover {
-    background-color: #ccc3f8;
-    border-color: #ccc3f8;
-    color: black;
+#hero-btn:hover {
+    background-color: #FFE6C7;
+    border-color: #FFE6C7;
+    color: #454545;
+}
+
+#navbar {
+    background-color: #454545;
+}
+
+.tagline {
+    font-size: 1.2em;
+    font-weight: 400;
 }

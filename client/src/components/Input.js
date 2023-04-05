@@ -14,86 +14,90 @@ const Input = () => {
   const [emailAddress, setEmailAddress] = useState("");
 
   const addContact = async (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  let inputData = {
-    firstName: event.target[0].value,
-    lastName: event.target[1].value,
-    phoneNumber: event.target[2].value,
-    emailAddress: event.target[3].value,
-  };
+    let inputData = {
+      firstName: event.target[0].value,
+      lastName: event.target[1].value,
+      phoneNumber: event.target[2].value,
+      emailAddress: event.target[3].value,
+    };
 
-  const isValid = await inputSchema.isValid(inputData);
+    const isValid = await inputSchema.isValid(inputData);
 
-  if (isValid === true) {
-    // Update URL according to deployment.
-    Axios.post("https://smart-phonebook.herokuapp.com/input", {
-    firstName: firstName,
-    lastName: lastName,
-    phoneNumber: phoneNumber,
-    emailAddress: emailAddress,
-    }).then(() => {
-    history.push("/view");
-    });
-  } else {
-    alert("Fill in the inputs or check for errors!");
-  }
+    if (isValid === true) {
+      // Update URL according to deployment.
+      Axios.post("https://smart-phonebook.herokuapp.com/input", {
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber,
+        emailAddress: emailAddress,
+      })
+        .then(() => {
+          history.push("/view");
+        })
+        .catch((err) => {
+          console.log("Request failed:", err);
+        });
+    } else {
+      alert("Fill in the inputs or check for errors!");
+    }
   };
 
   return (
-  <Container>
-    <Form onSubmit={addContact}>
-    <Row className="mb-3 mt-3">
-      <Form.Group as={Col} className="mb-3" controlId="formBasicEmail">
-      <Form.Label>First Name</Form.Label>
-      <Form.Control
-        type="text"
-        placeholder="Enter First Name"
-        required
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
-      />
-      </Form.Group>
+    <Container>
+      <Form onSubmit={addContact}>
+        <Row className="mb-3 mt-3">
+          <Form.Group as={Col} className="mb-3" controlId="formBasicEmail">
+            <Form.Label>First Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter First Name"
+              required
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </Form.Group>
 
-      <Form.Group as={Col} className="mb-3" controlId="formBasicEmail">
-      <Form.Label>Last Name</Form.Label>
-      <Form.Control
-        type="text"
-        placeholder="Enter Last Name"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
-      />
-      </Form.Group>
-    </Row>
-    <Row>
-      <Form.Group as={Col} className="mb-3" controlId="formBasicPassword">
-      <Form.Label>Phone Number</Form.Label>
-      <Form.Control
-        type="number"
-        placeholder="Enter Phone Number"
-        value={phoneNumber}
-        onChange={(e) => setPhoneNumber(e.target.value)}
-      />
-      </Form.Group>
+          <Form.Group as={Col} className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Last Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group as={Col} className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Phone Number</Form.Label>
+            <Form.Control
+              type="number"
+              placeholder="Enter Phone Number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+          </Form.Group>
 
-      <Form.Group as={Col} className="mb-3" controlId="formBasicEmail">
-      <Form.Label>Email Address</Form.Label>
-      <Form.Control
-        type="email"
-        placeholder="Enter Email Address"
-        value={emailAddress}
-        onChange={(e) => setEmailAddress(e.target.value)}
-      />
-      </Form.Group>
-    </Row>
+          <Form.Group as={Col} className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email Address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter Email Address"
+              value={emailAddress}
+              onChange={(e) => setEmailAddress(e.target.value)}
+            />
+          </Form.Group>
+        </Row>
 
-    <div className="d-grid gap-2 mt-3 input-btn">
-      <Button variant="" className="input-btn" size="lg" type="submit">
-      Add Contact
-      </Button>
-    </div>
-    </Form>
-  </Container>
+        <div className="d-grid gap-2 mt-3 input-btn">
+          <Button variant="" className="input-btn" size="lg" type="submit">
+            Add Contact
+          </Button>
+        </div>
+      </Form>
+    </Container>
   );
 };
 

@@ -12,6 +12,8 @@ const View = () => {
     //Update URL according to deployment.
     Axios.get("https://smart-phonebook.herokuapp.com/view").then((response) => {
       setContactList(response.data);
+    }).catch((err) => {
+      console.log("Request failed:", err);
     });
   }, []);
 

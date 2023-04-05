@@ -1,12 +1,12 @@
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { inputSchema } from "../Validations/InputValidation";
+import { useNavigate } from "react-router-dom";
+import { inputSchema } from "../util/InputValidation";
 import Axios from "axios";
 import "../styles/input.css";
 
 const Input = () => {
-  const history = useHistory();
+  const history = useNavigate();
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");

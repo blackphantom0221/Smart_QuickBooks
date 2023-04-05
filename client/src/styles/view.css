@@ -1,0 +1,19 @@
+.export-csv-btn {
+    color: black;
+    border-color: black;
+}
+
+.export-csv-btn:hover {
+    background-color: #ccc3f8;
+    border-color: #ccc3f8;
+    color: black;
+}
+
+.export-text {
+    color: black;
+    text-decoration: none;
+}
+
+.export-text:hover {
+    color: black;
+}

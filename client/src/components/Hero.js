@@ -1,7 +1,7 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import heroImg from "../assets/heroPhone.svg";
-import "../css/hero.css";
+import "../styles/hero.css";
 
 const Hero = () => {
   return (
@@ -16,7 +16,7 @@ const Hero = () => {
               </h1>
               <p>Instantly export your contacts as a CSV file.</p>
               <Link to="/input">
-                <Button className="heroBtn" variant="outline-primary" size="lg">
+                <Button className="hero-btn" variant="outline-primary" size="lg">
                   Get Started
                 </Button>
               </Link>

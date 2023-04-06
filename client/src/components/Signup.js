@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Container, Form, Button } from "react-bootstrap";
 
 import "../styles/login.css";
@@ -47,9 +48,11 @@ const SignupPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button variant="primary" type="submit" id="submit-btn">
-          Sign Up
-        </Button>
+        <Link to="/input">
+          <Button variant="primary" id="submit-btn">
+            Sign Up
+          </Button>
+        </Link>
       </Form>
     </Container>
   );
